@@ -1,13 +1,7 @@
 import pickle
 import warnings
 
-import pandas as pd
-
 warnings.filterwarnings('ignore')
-
-df = pd.read_csv('../data/data.csv')
-df = df[df['Crop_Damage'] == 'Minimal Damage']
-df.drop(['ID', 'Number_Doses_Week', 'Number_Weeks_Used', 'Number_Weeks_Quit', 'Crop_Damage'], axis=1, inplace=True)
 
 '''
 Estimated Insects Count:
