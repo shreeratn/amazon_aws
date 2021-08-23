@@ -56,9 +56,11 @@ result = loaded_model.predict([[insect, crop_type, soil_type, season]])
 print(pest_dict[result[0]])
 
 print('Lets find approximately how much of pesticide will you need')
-row = input('How many rows does your plantation has ')
-col = input('How many columns does your plantation has ')
-plant_row = input('How many plants are there in a row on average')
+area = int(input('Enter the area of your land in (sq meter) '))
+row = int(input('Enter intended row spacing in your your plantation (cm) ')) / 100
+col = int(input('Enter intended column spacing in your your plantation (cm) ')) / 100
 
-total_plant = row * col * plant_row
+plant_population = area / (row * col)
 
+print('\n\nYou can plant about ', int(plant_population), ' plants in your land')
+print('You will need ', 360 * area/10000, 'mL of', pest_dict[result[0]])
