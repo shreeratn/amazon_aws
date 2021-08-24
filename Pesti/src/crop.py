@@ -57,4 +57,17 @@ col = int(input('Enter intended column spacing in your your plantation (cm) ')) 
 plant_population = area / (row * col)
 
 print('\n\nYou can plant about ', int(plant_population), ' plants in your land')
-print('You will need ', 360 * area/10000, 'mL of', pest_dict[result[0]])
+print('You will need ', 360 * area / 10000, 'mL of', pest_dict[result[0]])
+
+print('Lets find out how much fertilizer will you need')
+n = int(input('Enter the nitrogen recommendation for your soil'))
+p = int(input('Enter the phosphorus recommendation for your soil'))
+k = int(input('Enter the potassium recommendation for your soil'))
+
+dap = p * 2.17
+urea = (n - (0.18 * dap)) * 2.17
+mop = k * 1.67
+
+print('Amount of DAP required is', dap)
+print('Amount of Urea required is', urea)
+print('Amount of MOP required is', mop)
